@@ -1,7 +1,1 @@
-NOT DEPLOYED — run locally using docs/setup-guide.md
-
-GridPulse requires a local backend (FastAPI) and frontend (React/Vite).
-Follow the setup guide to run the application on your machine.
-
-If a live deployment is available before submission, replace the line above
-with the deployment URL (e.g. https://gridpulse.example.com).
+https://bob-ai-hackathon-renewabulls-dydlv68dx-pro670913-1919.vercel.app/
