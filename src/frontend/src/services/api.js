@@ -2,16 +2,25 @@
  * GridPulse API Client Service Layer.
  *
  * In development: uses Vite proxy (/api → http://127.0.0.1:8000).
- * In production (Vercel): uses VITE_API_URL env var pointing to the Render backend.
+ * In production (Vercel): points to the live Render backend.
  * Handles error responses strictly without fabricating data.
  */
 
-// VITE_API_URL is set at build time via Vercel environment variables.
-// e.g. https://gridpulse-api.onrender.com
-// In local dev this is empty and the Vite proxy handles /api/* → :8000.
+// Production backend URL (Render). Used when VITE_API_URL env var is not set.
+const RENDER_BACKEND = 'https://gridpulse-api-2zh2.onrender.com';
+
+// Detect whether we are running on Vercel (production) or local dev.
+// In local dev, window.location.hostname is 'localhost' or '127.0.0.1'.
+const isLocalDev =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1');
+
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
-  : '/api';
+  : isLocalDev
+  ? '/api'
+  : `${RENDER_BACKEND}/api`;
 
 /**
  * Generic JSON request helper with HTTP error handling.
