@@ -1,7 +1,7 @@
-# GridPulse Python Dependencies
-# Install with: pip install -r requirements.txt
-# All packages pinned for reproducibility.
-# Python 3.11 required (see runtime.txt) — wheels available for all packages below.
+# GridPulse Python Dependencies — Production (Render)
+# ibm-watsonx-ai intentionally excluded: no credentials in deployment,
+# operator-brief uses template-fallback automatically.
+# All features work fully without it.
 
 # ── Core API ──────────────────────────────────────────────────────────────────
 fastapi==0.111.0
@@ -10,21 +10,16 @@ pydantic==2.7.1
 python-dotenv==1.0.1
 python-multipart==0.0.9
 
-# ── Data (install numpy first — pandas wheel depends on it) ───────────────────
+# ── Data ──────────────────────────────────────────────────────────────────────
 numpy==1.26.4
 pandas==2.2.2
 
-# ── Forecasting fallback (STL decomposition) ──────────────────────────────────
-statsmodels==0.14.2
+# ── Forecasting fallback ───────────────────────────────────────────────────────
 scipy==1.13.1
+statsmodels==0.14.2
 
-# ── Operator Brief fallback (Jinja2 template) ─────────────────────────────────
+# ── Operator Brief fallback ───────────────────────────────────────────────────
 jinja2==3.1.4
-
-# ── IBM watsonx.ai (Granite TTM + Granite Instruct) ───────────────────────────
-# Pinned to avoid pulling in unpinned heavy build-time dependencies.
-# Both features degrade gracefully if credentials are not configured.
-ibm-watsonx-ai==1.1.2
 
 # ── Testing ───────────────────────────────────────────────────────────────────
 pytest==8.2.0

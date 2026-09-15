@@ -1,27 +1,17 @@
 # render.yaml — Render.com deployment for GridPulse FastAPI backend
-# Docs: https://render.com/docs/yaml-spec
 
 services:
   - type: web
     name: gridpulse-api
     runtime: python
-    region: singapore          # closest free-tier region to India
+    region: singapore
     plan: free
-
-    # Render runs commands from the repo root.
-    # Our Python source lives under src/
     rootDir: src
-
-    # --prefer-binary avoids compiling pandas/numpy from source
-    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: PYTHON_VERSION
         value: "3.11.9"
-      # Optional: add WATSONX_API_KEY, WATSONX_PROJECT_ID here if you have credentials.
-      # Without them the operator-brief falls back to the template engine automatically.
-
     healthCheckPath: /api/health
