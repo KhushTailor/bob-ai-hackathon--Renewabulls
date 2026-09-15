@@ -12,12 +12,15 @@ services:
     # Our Python source lives under src/
     rootDir: src
 
-    buildCommand: pip install -r requirements.txt
+    # --prefer-binary avoids compiling pandas/numpy from source
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
 
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: PYTHON_VERSION
+        value: "3.11.9"
       # Optional: add WATSONX_API_KEY, WATSONX_PROJECT_ID here if you have credentials.
       # Without them the operator-brief falls back to the template engine automatically.
 

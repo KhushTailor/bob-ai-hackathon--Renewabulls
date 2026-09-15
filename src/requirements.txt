@@ -1,30 +1,30 @@
 # GridPulse Python Dependencies
 # Install with: pip install -r requirements.txt
-# All packages are pinned for reproducibility.
-# Verify ibm-watsonx-ai version on PyPI at installation time if needed.
+# All packages pinned for reproducibility.
+# Python 3.11 required (see runtime.txt) — wheels available for all packages below.
 
 # ── Core API ──────────────────────────────────────────────────────────────────
 fastapi==0.111.0
 uvicorn[standard]==0.30.1
 pydantic==2.7.1
 python-dotenv==1.0.1
+python-multipart==0.0.9
 
-# ── Data ──────────────────────────────────────────────────────────────────────
-pandas==2.2.2
+# ── Data (install numpy first — pandas wheel depends on it) ───────────────────
 numpy==1.26.4
+pandas==2.2.2
 
 # ── Forecasting fallback (STL decomposition) ──────────────────────────────────
 statsmodels==0.14.2
+scipy==1.13.1
 
 # ── Operator Brief fallback (Jinja2 template) ─────────────────────────────────
 jinja2==3.1.4
 
 # ── IBM watsonx.ai (Granite TTM + Granite Instruct) ───────────────────────────
-# Used for Feature 1 (demand forecast) and Feature 5 (operator brief)
-# Both features have tested fallbacks — this package is required but
-# features degrade gracefully if credentials are not configured.
-# Note: pin to a specific version after verifying on https://pypi.org/project/ibm-watsonx-ai/
-ibm-watsonx-ai
+# Pinned to avoid pulling in unpinned heavy build-time dependencies.
+# Both features degrade gracefully if credentials are not configured.
+ibm-watsonx-ai==1.1.2
 
 # ── Testing ───────────────────────────────────────────────────────────────────
 pytest==8.2.0
