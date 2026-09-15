@@ -10,7 +10,7 @@
 | :--- | :--- |
 | **Team Name** | Renewabulls |
 | **Track** | Sustainability |
-| **Team Lead** | Khush Tailor (`[PENDING_USER_EMAIL]`) |
+| **Team Lead** | Khush Tailor  |
 | **Project** | GridPulse |
 | **Hackathon** | IBM BOB AI Innovation Hackathon 2026 |
 
