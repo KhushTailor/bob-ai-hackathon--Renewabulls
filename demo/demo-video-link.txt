@@ -1,0 +1,17 @@
+[PENDING_SUBMISSION_DEMO_VIDEO_URL - Insert your hosted video URL here before final submission]
+
+Accepted Platforms:
+- YouTube (unlisted or public)
+- Loom (https://www.loom.com/share/...)
+- Google Drive (Set to "Anyone with the link can view")
+- IBM Box (https://ibm.box.com/s/...)
+
+Recommended 3-5 Minute Demo Video Script:
+0:00 - 0:30: Dashboard Overview & Live Telemetry (frequency, demand, solar, wind, battery SOC)
+0:30 - 1:15: 72-Hour Demand Forecasting (Recharts curve, peak/trough metrics, 288 points)
+1:15 - 2:00: Renewable Performance Monitoring (solar & wind PR%, capacity factors, curtailment alerts)
+2:00 - 2:45: 12-Rule Anomaly & Red-Flag Engine (active alerts, thresholds, severity badges)
+2:45 - 3:30: 72-Hour What-If Simulator (Battery dispatch 20MW/1h, load shift, feasibility & energy reserve)
+3:30 - 4:15: AI Operator Brief (decision-support synthesis answering 6 operational questions)
+4:15 - 4:45: Model Context Protocol (MCP) Tool Integration (demonstrating AI assistant tool queries)
+4:45 - 5:00: Wrap-Up & Sustainability Impact

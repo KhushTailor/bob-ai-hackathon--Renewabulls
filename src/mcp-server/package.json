@@ -1,0 +1,14 @@
+{
+  "name": "gridpulse-mcp-server",
+  "version": "0.1.0",
+  "description": "GridPulse Decision-Support MCP Server for IBM Bob and AI Assistants",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1"
+  }
+}
