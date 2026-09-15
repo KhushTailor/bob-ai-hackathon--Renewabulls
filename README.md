@@ -192,7 +192,12 @@ npm test
 
 ## ⚠️ Known Limitations & Non-Claims
 
-1. **Decision Support, Not Physical Grid Control**: GridPulse is an operator decision-support advisory tool. It does NOT claim to directly operate physical high-voltage switchgear.
-2. **Synthetic Telemetry**: The dataset is a mathematically sound, continuous 6-month synthetic microgrid time-series designed to represent real solar, wind, load, and grid events.
-3. **Linearized Balancing Model**: The simulator focuses on active power balance (MW/MWh), intertie capacity, and battery SOC constraints; it does not model reactive power (VARs) or transmission line bus impedance matrices.
-4. **Cloud AI Credentials**: watsonx.ai foundation models require IBM Cloud credentials. When running offline or unconfigured, robust deterministic statistical and template generators take over automatically.
+GridPulse is designed as a decision-support prototype, and we have clearly defined its current scope:
+Decision Support, Not Direct Control
+Provides alerts and recommendations for operators; it does not directly control high-voltage equipment.
+Synthetic Data
+The prototype uses a 6-month synthetic dataset representing solar, wind, demand, and grid events.
+Focused Power Model
+Currently focuses on active power balance, capacity, and battery SOC, without detailed reactive-power or transmission-line modelling.
+Cloud AI Dependency
+watsonx.ai features require IBM Cloud access. If unavailable, the system uses built-in statistical and rule-based methods to keep the prototype functional.

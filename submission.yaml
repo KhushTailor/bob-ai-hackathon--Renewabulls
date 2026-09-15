@@ -3,8 +3,16 @@ team:
   track: "Sustainability"                # REQUIRED — one of: AI | DevOps | Sustainability | Open
   lead:
     name: "Khush Tailor"                 # REQUIRED — replace with actual name
-    email: "pro670913@gmail.com"         # REQUIRED — replace with actual email e.g. name@ibm.com
-  members: []                            # Add member blocks if additional team members exist
+    email: "26ee076@charusat.edu.in"        # REQUIRED — replace with actual email e.g. name@ibm.com
+  members:
+    - name: "Khush Tailor"
+      email: "26ee076@charusat.edu.in"
+    - name: "Manya Verma"
+      email: "26ee082@charusat.edu.in"
+    - name: "Netra Vyas"
+      email: "26ee084@charusat.edu.in"
+    - name: "Shourya Soni"
+      email: "26ee072@charusat.edu.in"
 
 submission:
   title: "GridPulse"                     # REQUIRED
@@ -47,11 +55,15 @@ submission:
     clarity without making dangerous unverified autonomous grid control claims.
 
   known_limitations: >
-    Dataset is fully synthetic (statistically realistic 6-month microgrid dataset at 15-min intervals).
-    Demand forecast horizon is 72 hours; accuracy degrades beyond 48 hours. The what-if simulator is
-    a decision-support simulator and does not model full 3-phase AC power-flow or bus impedance.
-    watsonx.ai Granite integrations require IBM Cloud credentials; all features have fully tested
-    offline fallbacks that run without credentials.
+    GridPulse is designed as a decision-support prototype, and we have clearly defined its current scope:
+    Decision Support, Not Direct Control
+    Provides alerts and recommendations for operators; it does not directly control high-voltage equipment.
+    Synthetic Data
+    The prototype uses a 6-month synthetic dataset representing solar, wind, demand, and grid events.
+    Focused Power Model
+    Currently focuses on active power balance, capacity, and battery SOC, without detailed reactive-power or transmission-line modelling.
+    Cloud AI Dependency
+    watsonx.ai features require IBM Cloud access. If unavailable, the system uses built-in statistical and rule-based methods to keep the prototype functional.
 
 artifacts:
   source_code: "src/"
