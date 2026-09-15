@@ -44,7 +44,7 @@ export default function App() {
       ]);
 
       setStatusData(statusRes);
-      setAlerts(alertsRes || []);
+      setAlerts(Array.isArray(alertsRes) ? alertsRes : (alertsRes?.alerts || []));
       setForecast(forecastRes);
       setRenewables(renewablesRes);
       setBrief(briefRes);
