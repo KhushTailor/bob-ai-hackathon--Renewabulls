@@ -1,11 +1,17 @@
 /**
  * GridPulse API Client Service Layer.
  *
- * Communicates with the FastAPI backend over the configured development proxy (/api)
- * or direct base URL. Handles error responses strictly without fabricating data.
+ * In development: uses Vite proxy (/api → http://127.0.0.1:8000).
+ * In production (Vercel): uses VITE_API_URL env var pointing to the Render backend.
+ * Handles error responses strictly without fabricating data.
  */
 
-const API_BASE = '/api';
+// VITE_API_URL is set at build time via Vercel environment variables.
+// e.g. https://gridpulse-api.onrender.com
+// In local dev this is empty and the Vite proxy handles /api/* → :8000.
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : '/api';
 
 /**
  * Generic JSON request helper with HTTP error handling.
